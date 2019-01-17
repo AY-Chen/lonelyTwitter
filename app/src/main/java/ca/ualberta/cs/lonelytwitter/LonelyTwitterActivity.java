@@ -1,9 +1,11 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -97,5 +99,19 @@ public class LonelyTwitterActivity extends Activity {
 		catch (TweetTooLongException e) {
             e.printStackTrace();
         }
+	}
+
+	private void saveInFile() {
+		try {
+
+			FileWriter out = new FileWriter(new File(getFilesDir(), FILENAME));
+
+		}catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
